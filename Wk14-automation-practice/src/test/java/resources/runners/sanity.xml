@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testsuite" verbose="1" >
+    <listeners>
+        <listener class-name="com.automation.customlisteners.CustomListeners"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="Sanity Test" >
+        <classes>
+            <class name="com.automation.testsuite.SignPageTest">
+                <methods>
+                    <include name="userShouldNavigateToSignInPageSuccessFully"></include>
+                    <include name="verifyTheErrorMessageWithInValidCredentials"></include>
+                </methods>
+            </class>
+            <class name="com.automation.testsuite.CreateAccountPageTest">
+                <methods>
+                    <include name="verifyThatUserShouldCreateAccountSuccessfully"></include>
+                </methods>
+            </class>
+            <class name="com.automation.testsuite.WomenCategoryPageTest">
+                <methods>
+                    <include name="verifyUserShouldNavigateToWomenCategoryPageSuccessfully"></include>
+                    <include name="verifyUserShouldAddProductToTheCartSuccessfully"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
